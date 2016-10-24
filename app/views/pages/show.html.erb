@@ -1,46 +1,38 @@
-<% if !flash[:notice].blank? %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
+<% @page_title = @page.name %>
 
-<%= link_to("<< Back to List", sections_path, :class => 'back-link') %>
+<%= link_to("<< Back to List", pages_path, :class => 'back-link') %>
 
-<div class="sections show">
-  <h2>Show Section</h2>
+<div class="pages show">
+  <h2>Show Page</h2>
 
-  <table summary="Section detail view">
+  <table summary="Page detail view">
     <tr>
       <th>Name</th>
-      <td><%= @section.name %></td>
+      <td><%= @page.name %></td>
     </tr>
     <tr>
-      <th>Page ID</th>
-      <td><%= @section.page_id %></td>
+      <th>Subject ID</th>
+      <td><%= @page.subject_id %></td>
+    </tr>
+    <tr>
+      <th>Permalink</th>
+      <td><%= @page.permalink %></td>
     </tr>
     <tr>
       <th>Position</th>
-      <td><%= @section.position %></td>
+      <td><%= @page.position %></td>
     </tr>
     <tr>
       <th>Visible?</th>
-      <td><%= @section.visible ? 'true' : 'false' %></td>
-    </tr>
-    <tr>
-      <th>Content type</th>
-      <td><%= @section.content_type %></td>
-    </tr>
-    <tr>
-      <th>Content</th>
-      <td><%= @section.content %></td>
+      <td><%= @page.visible ? 'true' : 'false' %></td>
     </tr>
     <tr>
       <th>Created</th>
-      <td><%= @section.created_at %></td>
+      <td><%= @page.created_at %></td>
     </tr>
     <tr>
       <th>Updated</th>
-      <td><%= @section.updated_at %></td>
+      <td><%= @page.updated_at %></td>
     </tr>
   </table>
 
